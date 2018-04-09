@@ -16,7 +16,7 @@ before_install:
   # Now we can install the newer docker-engine which is required for the newer
   # docker-composer we will install next. The messy options are to force it to
   # be non-interactive (normally it asks you a bunch of config questions).
-  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+  #- sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
 
   # Print out the current docker-compose version. Once this reports 1.6+ then we
   # do not need the following steps.
@@ -39,9 +39,17 @@ before_install:
   # doing out-of-the-ordinary docker-compose builds.
   - docker-compose pull
   - docker-compose build
-  - docker-compose start
+  - docker-compose up -d
 
   # You will want this for logging. If one of your containers does not build for
   # whatever reason it's best to report that now before your tests start
   # otherwise it can be really tricky to debug why tests are failing sometimes.
   - docker ps
+
+# Override the default test script
+script:
+<<<<<<< HEAD
+  - docker ps
+=======
+  - docker ps
+>>>>>>> a026cdf... T-1 travis.yml fix
