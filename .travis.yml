@@ -48,8 +48,5 @@ before_install:
 
 # Override the default test script
 script:
-<<<<<<< HEAD
   - docker ps
-=======
-  - docker ps
->>>>>>> a026cdf... T-1 travis.yml fix
+  
