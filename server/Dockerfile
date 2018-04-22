@@ -6,4 +6,4 @@ ADD package.json .
 
 RUN npm install --quiet
 
-CMD ["npm", "start"]
+CMD ["./wait-for-it.sh", "db:3306", "--", "npm", "start"]

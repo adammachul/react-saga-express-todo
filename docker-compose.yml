@@ -1,11 +1,8 @@
 version: '3'
 services:
   db:
-    image: mysql
-    ports:
-      - "3307:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: example
+    image: mongo
+    network_mode: service:backend
   
   backend:
     build: ./server
@@ -14,6 +11,8 @@ services:
     volumes:
       - './server:/usr/app'
       - '/usr/app/node_modules'
+    environment:
+      - JWT_SECRET=examplesecret
 
   frontend:
     build: ./client
