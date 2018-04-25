@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const BaseContainerStyle = styled.div`
   background: ${props => props.theme.foreground}; 
   border-radius: 5px;
-  border: 1px solid ${props => props.theme.borderColor};
+  border: 0 solid ${props => props.theme.borderColor};
   padding: 10px;
   color: ${props => props.theme.textColor};
 `;
@@ -35,7 +35,7 @@ export const Container = styled.div`
 
 export const Header = BaseNavigationStyle.extend`
   grid-area: header;
-  border-bottom-width: 2px;
+  border-bottom-width: 0;
 
   display: flex;
   justify-content: center;
@@ -49,6 +49,9 @@ export const Nav = BaseContainerStyle.extend`
 
 export const Main = BaseContainerStyle.extend`
   grid-area: content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Sidebar = BaseContainerStyle.extend`
@@ -58,7 +61,7 @@ export const Sidebar = BaseContainerStyle.extend`
 
 export const Footer = BaseNavigationStyle.extend`
   grid-area: footer;
-  border-top-width: 2px;
+  border-top-width: 0;
   display: flex;
   align-items: center;
   padding-left: 20px;

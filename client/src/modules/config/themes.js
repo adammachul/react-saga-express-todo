@@ -12,6 +12,7 @@ const themes = {
         borderColor: 'snow',
     },
     greenTheme: {
+        textColor: '#1db954',
         foreground: 'red',
         background: 'yellow',
         borderColor: 'teal'

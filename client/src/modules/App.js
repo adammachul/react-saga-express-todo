@@ -20,7 +20,7 @@ class App extends Component {
         </Main>
 
         <Sidebar>
-          blblb
+          Navigation
         </Sidebar>
 
         <Footer>
